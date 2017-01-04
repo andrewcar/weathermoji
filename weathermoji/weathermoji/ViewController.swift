@@ -50,7 +50,17 @@ extension ViewController: CLLocationManagerDelegate {
         if locationManager.location != nil {
             geocoder.reverseGeocodeLocation(locations[0], completionHandler: { (placemarks, error) in
                 if error == nil {
-                    self.currentLocationNameLabel.text = placemarks?[0].subLocality
+                    if let placemark = placemarks?[0] {
+                        self.currentLocationNameLabel.text = placemark.subLocality
+                        if let coord = placemark.location?.coordinate {
+                            self.weather.getWeatherID(coordinate: coord)
+                            if self.weather.weatherID != nil {
+                                self.currentLocationWeatherLabel.text = self.weather.weatherEmojis
+                            }
+                        } else {
+                            print("no coord")
+                        }
+                    }
                 }
             })
         }
