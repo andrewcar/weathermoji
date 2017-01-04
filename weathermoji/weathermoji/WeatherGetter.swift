@@ -31,7 +31,9 @@ class WeatherGetter {
             else {
                 // Case 2: Success
                 // We got a response from the server!
-                print("Data:\n\(data!)")
+                print("Raw data:\n\(data!)\n")
+                let dataString = String(data: data!, encoding: String.Encoding.utf8)
+                print("Human-readable data:\n\(dataString!)")
             }
         }
         
