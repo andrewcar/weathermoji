@@ -12,6 +12,7 @@
 		49E33B4A1E1D45A4001903BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49E33B481E1D45A4001903BE /* Main.storyboard */; };
 		49E33B4C1E1D45A4001903BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49E33B4B1E1D45A4001903BE /* Assets.xcassets */; };
 		49E33B4F1E1D45A4001903BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49E33B4D1E1D45A4001903BE /* LaunchScreen.storyboard */; };
+		49E33B591E1D480B001903BE /* WeatherGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E33B581E1D480B001903BE /* WeatherGetter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		49E33B4B1E1D45A4001903BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49E33B4E1E1D45A4001903BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		49E33B501E1D45A4001903BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49E33B581E1D480B001903BE /* WeatherGetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherGetter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				49E33B441E1D45A4001903BE /* AppDelegate.swift */,
 				49E33B461E1D45A4001903BE /* ViewController.swift */,
+				49E33B581E1D480B001903BE /* WeatherGetter.swift */,
 				49E33B481E1D45A4001903BE /* Main.storyboard */,
 				49E33B4B1E1D45A4001903BE /* Assets.xcassets */,
 				49E33B4D1E1D45A4001903BE /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49E33B471E1D45A4001903BE /* ViewController.swift in Sources */,
+				49E33B591E1D480B001903BE /* WeatherGetter.swift in Sources */,
 				49E33B451E1D45A4001903BE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
