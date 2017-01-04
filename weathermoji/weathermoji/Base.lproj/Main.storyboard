@@ -123,6 +123,13 @@
                             <constraint firstItem="ylR-E1-DjZ" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="zlX-cv-Yrs"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cairoWeatherLabel" destination="oaN-jc-4Iy" id="wHc-3T-YUj"/>
+                        <outlet property="currentLocationNameLabel" destination="z3K-AT-DTu" id="Moz-mU-0CC"/>
+                        <outlet property="currentLocationWeatherLabel" destination="auc-aK-yZP" id="XtI-KV-9Z0"/>
+                        <outlet property="miamiWeatherLabel" destination="ylR-E1-DjZ" id="UBR-IQ-jCo"/>
+                        <outlet property="newYorkWeatherLabel" destination="Cqi-Jn-dbj" id="GjO-ZM-igd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

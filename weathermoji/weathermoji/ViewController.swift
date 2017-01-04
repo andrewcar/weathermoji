@@ -7,11 +7,23 @@
 //
 
 import UIKit
+import MapKit
 
 class ViewController: UIViewController {
-
+    
+    var locationManager = CLLocationManager()
+    @IBOutlet weak var currentLocationNameLabel: UILabel!
+    @IBOutlet weak var currentLocationWeatherLabel: UILabel!
+    @IBOutlet weak var newYorkWeatherLabel: UILabel!
+    @IBOutlet weak var miamiWeatherLabel: UILabel!
+    @IBOutlet weak var cairoWeatherLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.distanceFilter = kCLDistanceFilterNone
         
         let weather = WeatherGetter()
         weather.getWeather(city: "NewYork")
@@ -23,5 +35,27 @@ class ViewController: UIViewController {
     }
 
 
+}
+
+extension ViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .notDetermined {
+            locationManager.requestWhenInUseAuthorization()
+        } else if status == .authorizedWhenInUse {
+            locationManager.startUpdatingLocation()
+            locationManager.startUpdatingHeading()
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if locationManager.location != nil {
+            let geocoder = CLGeocoder()
+            geocoder.reverseGeocodeLocation(locations[0], completionHandler: { (placemarks, error) in
+                if error == nil {
+                    self.currentLocationNameLabel.text = placemarks?[0].subLocality
+                }
+            })
+        }
+    }
 }
 
