@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 
 class ViewController: UIViewController {
-    
+
     var locationManager = CLLocationManager()
     let geocoder = CLGeocoder()
     let weather = WeatherGetter()
@@ -32,8 +32,21 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    func updateStaticLocationLabels() {
+        weather.updateWeatherID(coordinate: weather.newYorkCoord)
+        weather.updateWeatherID(coordinate: weather.miamiCoord)
+        weather.updateWeatherID(coordinate: weather.cairoCoord)
+        if weather.newYorkID != nil {
+            newYorkWeatherLabel.text = weather.weatherEmojis(id: weather.newYorkID!)
+        }
+        if weather.miamiID != nil {
+            miamiWeatherLabel.text = weather.weatherEmojis(id: weather.miamiID!)
+        }
+        if weather.cairoID != nil {
+            cairoWeatherLabel.text = weather.weatherEmojis(id: weather.cairoID!)
+        }
+    }
 }
 
 extension ViewController: CLLocationManagerDelegate {
@@ -53,9 +66,9 @@ extension ViewController: CLLocationManagerDelegate {
                     if let placemark = placemarks?[0] {
                         self.currentLocationNameLabel.text = placemark.subLocality
                         if let coord = placemark.location?.coordinate {
-                            self.weather.getWeatherID(coordinate: coord)
-                            if self.weather.weatherID != nil {
-                                self.currentLocationWeatherLabel.text = self.weather.weatherEmojis
+                            self.weather.updateWeatherID(coordinate: coord)
+                            if self.weather.currentWeatherID != nil {
+                                self.currentLocationWeatherLabel.text = self.weather.weatherEmojis(id: self.weather.currentWeatherID!)
                             }
                         } else {
                             print("no coord")
@@ -63,6 +76,7 @@ extension ViewController: CLLocationManagerDelegate {
                     }
                 }
             })
+            updateStaticLocationLabels()
         }
     }
 }
