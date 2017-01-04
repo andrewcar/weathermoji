@@ -12,6 +12,8 @@ import MapKit
 class ViewController: UIViewController {
     
     var locationManager = CLLocationManager()
+    let geocoder = CLGeocoder()
+    let weather = WeatherGetter()
     @IBOutlet weak var currentLocationNameLabel: UILabel!
     @IBOutlet weak var currentLocationWeatherLabel: UILabel!
     @IBOutlet weak var newYorkWeatherLabel: UILabel!
@@ -23,10 +25,7 @@ class ViewController: UIViewController {
         
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.distanceFilter = kCLDistanceFilterNone
-        
-        let weather = WeatherGetter()
-        weather.getWeather(city: "NewYork")
+        locationManager.distanceFilter = kCLDistanceFilterNone        
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,7 +48,6 @@ extension ViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if locationManager.location != nil {
-            let geocoder = CLGeocoder()
             geocoder.reverseGeocodeLocation(locations[0], completionHandler: { (placemarks, error) in
                 if error == nil {
                     self.currentLocationNameLabel.text = placemarks?[0].subLocality
