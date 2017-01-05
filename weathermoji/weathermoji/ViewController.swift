@@ -27,6 +27,10 @@ class ViewController: UIViewController {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.distanceFilter = kCLDistanceFilterNone        
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        updateStaticLocationLabels()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -64,7 +68,7 @@ extension ViewController: CLLocationManagerDelegate {
             geocoder.reverseGeocodeLocation(locations[0], completionHandler: { (placemarks, error) in
                 if error == nil {
                     if let placemark = placemarks?[0] {
-                        self.currentLocationNameLabel.text = placemark.subLocality
+                        self.currentLocationNameLabel.text = placemark.subLocality ?? placemark.locality
                         if let coord = placemark.location?.coordinate {
                             self.weather.updateWeatherID(coordinate: coord)
                             if self.weather.currentWeatherID != nil {

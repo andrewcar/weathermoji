@@ -56,10 +56,10 @@
 		49E33B431E1D45A4001903BE /* weathermoji */ = {
 			isa = PBXGroup;
 			children = (
-				49E33B441E1D45A4001903BE /* AppDelegate.swift */,
+				49E33B481E1D45A4001903BE /* Main.storyboard */,
 				49E33B461E1D45A4001903BE /* ViewController.swift */,
 				49E33B581E1D480B001903BE /* WeatherGetter.swift */,
-				49E33B481E1D45A4001903BE /* Main.storyboard */,
+				49E33B441E1D45A4001903BE /* AppDelegate.swift */,
 				49E33B4B1E1D45A4001903BE /* Assets.xcassets */,
 				49E33B4D1E1D45A4001903BE /* LaunchScreen.storyboard */,
 				49E33B501E1D45A4001903BE /* Info.plist */,
@@ -304,6 +304,7 @@
 				49E33B551E1D45A4001903BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
