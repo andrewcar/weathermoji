@@ -49,7 +49,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New York" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wut-Bc-YjU">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mù Cang Chải" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wut-Bc-YjU">
                                 <rect key="frame" x="16" y="271.5" width="343" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Oqz-EB-Nnw"/>
@@ -128,7 +128,7 @@
                         <outlet property="currentLocationNameLabel" destination="z3K-AT-DTu" id="Moz-mU-0CC"/>
                         <outlet property="currentLocationWeatherLabel" destination="auc-aK-yZP" id="XtI-KV-9Z0"/>
                         <outlet property="miamiWeatherLabel" destination="ylR-E1-DjZ" id="UBR-IQ-jCo"/>
-                        <outlet property="newYorkWeatherLabel" destination="Cqi-Jn-dbj" id="GjO-ZM-igd"/>
+                        <outlet property="mùCangChảiWeatherLabel" destination="Cqi-Jn-dbj" id="3cI-N4-O36"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

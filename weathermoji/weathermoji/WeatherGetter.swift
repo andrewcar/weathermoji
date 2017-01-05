@@ -13,10 +13,10 @@ class WeatherGetter {
     
     private let openWeatherMapBaseURL = "http://api.openweathermap.org/data/2.5/weather"
     private let openWeatherMapAPIKey = "10abd2dcd8626a4d75165599ff7c8625"
-    let newYorkCoord = CLLocationCoordinate2D(latitude: 40.733607, longitude: -73.994039)
+    let mùCangChảiCoord = CLLocationCoordinate2D(latitude: 21.772979, longitude: 104.107066)
     let miamiCoord = CLLocationCoordinate2D(latitude: 25.778698, longitude: -80.133461)
     let cairoCoord = CLLocationCoordinate2D(latitude: 30.045253, longitude: 31.232156)
-    var newYorkID: Int?
+    var mùCangChảiID: Int?
     var miamiID: Int?
     var cairoID: Int?
     var currentWeatherID: Int?
@@ -137,8 +137,8 @@ class WeatherGetter {
                     let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [String:AnyObject]
                     if let weather = json?["weather"] as? [[String:AnyObject]] {
                         if let id = weather.first?["id"] {
-                            if coordinate.latitude == self.newYorkCoord.latitude && coordinate.longitude == self.newYorkCoord.longitude {
-                                self.newYorkID = id as? Int
+                            if coordinate.latitude == self.mùCangChảiCoord.latitude && coordinate.longitude == self.mùCangChảiCoord.longitude {
+                                self.mùCangChảiID = id as? Int
                             } else if coordinate.latitude == self.miamiCoord.latitude && coordinate.longitude == self.miamiCoord.longitude {
                                 self.miamiID = id as? Int
                             } else if coordinate.latitude == self.cairoCoord.latitude && coordinate.longitude == self.cairoCoord.longitude {

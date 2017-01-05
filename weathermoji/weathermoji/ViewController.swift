@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     let weather = WeatherGetter()
     @IBOutlet weak var currentLocationNameLabel: UILabel!
     @IBOutlet weak var currentLocationWeatherLabel: UILabel!
-    @IBOutlet weak var newYorkWeatherLabel: UILabel!
+    @IBOutlet weak var mùCangChảiWeatherLabel: UILabel!
     @IBOutlet weak var miamiWeatherLabel: UILabel!
     @IBOutlet weak var cairoWeatherLabel: UILabel!
     
@@ -38,11 +38,11 @@ class ViewController: UIViewController {
     }
     
     func updateStaticLocationLabels() {
-        weather.updateWeatherID(coordinate: weather.newYorkCoord)
+        weather.updateWeatherID(coordinate: weather.mùCangChảiCoord)
         weather.updateWeatherID(coordinate: weather.miamiCoord)
         weather.updateWeatherID(coordinate: weather.cairoCoord)
-        if weather.newYorkID != nil {
-            newYorkWeatherLabel.text = weather.weatherEmojis(id: weather.newYorkID!)
+        if weather.mùCangChảiID != nil {
+            mùCangChảiWeatherLabel.text = weather.weatherEmojis(id: weather.mùCangChảiID!)
         }
         if weather.miamiID != nil {
             miamiWeatherLabel.text = weather.weatherEmojis(id: weather.miamiID!)
